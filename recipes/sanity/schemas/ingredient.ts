@@ -11,5 +11,11 @@ export const Ingredient = defineType({
             type: 'string',
             validation: Rule => Rule.required().error('Name is reqired')
         }),
+        defineField({
+            title: 'Brand',
+            name: 'brand',
+            type: 'string',
+            description: 'Leave blank if generic.'
+        })
     ]
 });
