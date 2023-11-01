@@ -23,9 +23,13 @@ export const Recipe = defineType({
             title: 'Featured Image',
             name: 'featuredImage',
             type: 'image',
-            options: {
-                hotspot: true
-            },
+            fields: [
+                defineField({ 
+                  name: 'alt',
+                  type: 'string',
+                  validation: Rule => Rule.required().error('Alt is required for the featured image.')
+                })
+              ],
             validation: Rule => Rule.required().error('Featured Image is reqired')
         }),
         defineField({
