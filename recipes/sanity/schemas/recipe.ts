@@ -30,7 +30,7 @@ export const Recipe = defineType({
                   validation: Rule => Rule.required().error('Alt is required for the featured image.')
                 })
               ],
-            validation: Rule => Rule.required().error('Featured Image is reqired')
+            validation: Rule => Rule.required().error('Featured Image is required')
         }),
         defineField({
             title: 'Prep time (mins)',
