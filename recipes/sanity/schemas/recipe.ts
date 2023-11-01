@@ -47,14 +47,26 @@ export const Recipe = defineType({
             of: [
                 {
                     type: 'object',
+                    preview: {
+                        select: {
+                            ingredient: 'ingredient.name',
+                            brand: 'ingredient.brand',
+                            amount: 'amount',
+                            unit: 'unit'
+                        },
+                        prepare(selection){
+                            const { ingredient, amount, unit, brand = '' } = selection;
+                            return { title: `${amount}${unit} ${brand ? `${brand} ` : ''}${ingredient}`}
+                        }
+                    },
                     fields: [
-                        {
+                        defineField({
                             name: 'ingredient',
                             title: 'Indredient',
                             type: 'reference',
                             to: [{ type: 'ingredient' }],
                             validation: Rule => Rule.required().error('Ingredient is required.')
-                        },
+                        }),
                         defineField({
                             title: 'Amount',
                             name: 'amount',
