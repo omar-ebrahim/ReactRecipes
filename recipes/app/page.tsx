@@ -1,3 +1,4 @@
+import RecipeCard from "@/components/RecipeCard";
 import { getAllRecipes } from "@/sanity/queries/getAllRecipes";
 
 export default async function Home() {
@@ -5,6 +6,6 @@ export default async function Home() {
   console.log(recipes);
 
   return (
-    <><h1>Hello world</h1><h2>Hi world</h2></>
+    <>{recipes.map((r) => <RecipeCard recipe={r} />)}</>
   )
 }

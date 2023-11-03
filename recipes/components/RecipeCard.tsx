@@ -6,7 +6,9 @@ type RecipeCardProps = {
 
 const RecipeCard = ({ recipe }: RecipeCardProps) => {
     const { title, cookTime, featuredImageAlt, featuredImageUrl, prepTime, tags } = recipe;
-    return <div>{title}</div>
+    return (<div className="border border-blue-400">
+        {title}
+    </div>);
 };
 
 export default RecipeCard;
