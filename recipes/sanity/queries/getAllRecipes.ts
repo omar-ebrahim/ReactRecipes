@@ -6,6 +6,7 @@ export interface HomepageRecipeTag {
 }
 
 export interface HomepageRecipe {
+    title: string;
     cookTime: number;
     prepTime: number;
     tags: Array<HomepageRecipeTag>;
@@ -15,6 +16,7 @@ export interface HomepageRecipe {
 
 const getAllRecipesQuery = groq`
 *[_type == "recipe"] {
+    title,
     cookTime,
     prepTime,
     tags[]->{
