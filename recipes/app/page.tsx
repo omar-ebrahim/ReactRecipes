@@ -1,4 +1,4 @@
-import RecipeCard from "@/components/RecipeCard";
+import RecipeCard from "@/components/RecipeCard/RecipeCard";
 import { getAllRecipes } from "@/sanity/queries/getAllRecipes";
 
 export default async function Home() {

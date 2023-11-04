@@ -7,6 +7,7 @@ export interface HomepageRecipeTag {
 
 export interface HomepageRecipe extends SanityDocument {
     title: string;
+    subtitle?: string;
     cookTime: number;
     prepTime: number;
     tags: Array<HomepageRecipeTag>;
@@ -15,8 +16,9 @@ export interface HomepageRecipe extends SanityDocument {
 }
 
 const getAllRecipesQuery = groq`
-*[_type == "recipe"] {
+*[_type == "recipe" && slug.current != ""] {
     title,
+    subtitle,
     cookTime,
     prepTime,
     tags[]->{
