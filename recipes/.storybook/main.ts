@@ -15,6 +15,7 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
     "@storybook/addon-styling-webpack",
+    'storybook-tailwind-dark-mode',
     ({
       name: "@storybook/addon-styling-webpack",
 
