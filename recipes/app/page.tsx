@@ -6,6 +6,10 @@ export default async function Home() {
   console.log(recipes);
 
   return (
-    <>{recipes.map((r) => <RecipeCard recipe={r} />)}</>
-  )
+    <>
+      {recipes.map((recipe) => (
+        <RecipeCard key={`$recipe_card_${recipe._id}`} recipe={recipe} />
+      ))}
+    </>
+  );
 }

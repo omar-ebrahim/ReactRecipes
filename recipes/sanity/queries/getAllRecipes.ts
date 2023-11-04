@@ -1,11 +1,11 @@
-import { groq } from "next-sanity";
+import { SanityDocument, groq } from "next-sanity";
 import { client } from "../lib/client";
 
 export interface HomepageRecipeTag {
     name: string;
 }
 
-export interface HomepageRecipe {
+export interface HomepageRecipe extends SanityDocument {
     title: string;
     cookTime: number;
     prepTime: number;
