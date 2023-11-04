@@ -13,6 +13,14 @@ export const Recipe = defineType({
             validation: Rule => Rule.required().error('Title is reqired').min(3).max(25)
         }),
         defineField({
+            title: "Slug",
+            name: "slug",
+            type: "slug",
+            options: {
+                source: 'title'
+            }
+        }),
+        defineField({
             title: 'Subtitle',
             name: 'subtitle',
             type: 'string',
