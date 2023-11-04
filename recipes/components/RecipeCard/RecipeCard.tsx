@@ -18,7 +18,7 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
         tags,
     } = recipe
     return (
-        <div className="border shadow-2xl w-[250px] h-[300px] rounded-3xl text-center hover:placeholder-opacity-90 hover:bg-slate-200 hover:dark:bg-gray-800 dark:bg-gray-700 bg-slate-100  dark:text-gray-300 hover:dark:text-white text-slate-600 pb-4">
+        <div className="border shadow-2xl min-w-[250px] w-[250px] h-[300px] rounded-3xl text-center hover:placeholder-opacity-90 hover:bg-slate-200 hover:dark:bg-gray-800 dark:bg-gray-700 bg-slate-100  dark:text-gray-300 hover:dark:text-white text-slate-600 pb-4">
             <Image
                 src={featuredImageUrl}
                 alt={featuredImageAlt}

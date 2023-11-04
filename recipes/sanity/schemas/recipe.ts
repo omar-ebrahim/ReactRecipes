@@ -67,8 +67,8 @@ export const Recipe = defineType({
                             unit: 'unit'
                         },
                         prepare(selection){
-                            const { ingredient, amount, unit, brand = '' } = selection;
-                            return { title: `${amount}${unit} ${brand ? `${brand} ` : ''}${ingredient}`}
+                            const { ingredient, amount, unit = '', brand = '' } = selection;
+                            return { title: `${amount || ''} ${unit || ''} ${brand || ''}${ingredient}`}
                         }
                     },
                     fields: [
@@ -83,7 +83,6 @@ export const Recipe = defineType({
                             title: 'Amount',
                             name: 'amount',
                             type: 'number',
-                            validation: Rule => Rule.required().error('Amount is required.')
                         }),
                         defineField({
                             title: 'Unit',
@@ -104,7 +103,8 @@ export const Recipe = defineType({
                                     { title: 'g', value: 'g' },
                                     { title: 'kg', value: 'kg' },
                                     { title: 'lb', value: 'lb' },
-                                    { title: 'oz', value: 'oz' }
+                                    { title: 'oz', value: 'oz' },
+                                    { title: 'slice(s)', value: 'slice(s)' },
                                 ],
                             },
                         })
