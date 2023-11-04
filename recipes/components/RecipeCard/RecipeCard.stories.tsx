@@ -30,19 +30,7 @@ export const Primary: Story = {
       featuredImageAlt: "Some porridge in a bowl",
       featuredImageUrl:
         "https://cdn.sanity.io/images/eblz5a9b/production/10137b6704ae318d296bef9d59ae9b66a93c7f91-6720x4480.jpg",
-      tags: [{ name: "Porridge" }],
+      tags: [{ name: "Porridge1" }, { name: "Porridge2" }, { name: "Porridge3" }, { name: "Porridge4" }],
     },
   },
-
-  // render: () => <RecipeCard recipe={
-  //     {
-  //         title: "Porridge Bowl",
-  //         subtitle: 'A nice witer warmer',
-  //         cookTime: 1,
-  //         prepTime: 1,
-  //         featuredImageAlt: 'Some porridge in a bowl',
-  //         featuredImageUrl: 'https://cdn.sanity.io/images/eblz5a9b/production/10137b6704ae318d296bef9d59ae9b66a93c7f91-6720x4480.jpg',
-  //         tags: [{name: 'Porridge'}]
-  //     }
-  // } />,
 };
