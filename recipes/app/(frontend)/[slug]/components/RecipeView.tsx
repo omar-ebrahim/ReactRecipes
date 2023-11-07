@@ -35,7 +35,7 @@ const RecipeView = ({ data: recipe }: RecipeViewProps) => {
             <section className="pt-4 pb-8 text-center content-center">
                 <header className="font-bold text-4xl pb-4">{title}</header>
                 {subtitle && <h2 className="pt-4 pb-6 italic">{subtitle}</h2>}
-                {featuredImageUrl && <Image src={featuredImageUrl} alt={featuredImageAlt} width={100} height={100} className="w-full max-h-[300px] lg:w-[200px] lg:rounded-full lg:h-[200px] lg:object-fill object-cover rounded-md lg:mx-auto" />}
+                {featuredImageUrl && <Image priority src={featuredImageUrl} alt={featuredImageAlt} width={100} height={100} className="w-full max-h-[300px] lg:w-[250px] lg:rounded-full lg:h-[250px] object-cover rounded-md lg:mx-auto" />}
             </section>
             <section className="pb-8 lg:pt-36">
                 <p>Prep time: {prepTime} mins.</p>
