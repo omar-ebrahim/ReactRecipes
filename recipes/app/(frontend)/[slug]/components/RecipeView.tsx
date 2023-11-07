@@ -29,7 +29,6 @@ const RecipeView = ({ data: recipe }: RecipeViewProps) => {
         preamble,
         subtitle,
     } = recipe;
-    console.log(recipe)
     return (
         <div className="p-4 lg:flex-col lg:gap-x-20 lg:grid-cols-[minmax(700px,_900px)_minmax(200px,_1fr)] lg:grid lg:w-fit lg:mx-auto lg:grid-rows-[auto_1fr]">
             <section className="pt-4 pb-8 text-center content-center">
