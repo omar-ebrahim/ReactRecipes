@@ -20,7 +20,7 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
     } = recipe
     return (
         <Link href={`/${slug}`} aria-label={title}>
-            <div className="hover:bg-gray-50 border shadow-md md:w-[250px] lg:w-[250px] sm:w-full h-full rounded-xl p-4 text-center mt-4">
+            <div className="hover:bg-gray-100 border shadow-md md:w-[250px] lg:w-[250px] sm:w-full h-full rounded-xl p-4 text-center mt-4">
                 <Image src={featuredImageUrl} alt={featuredImageAlt} width={220} height={150} className="rounded-md w-full h-[200px] object-cover object-center" />
                 <p className="text-slate-600 pt-2 font-semibold text-lg">{title}</p>
                 <div>
