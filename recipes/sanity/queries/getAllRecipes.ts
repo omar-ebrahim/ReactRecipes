@@ -13,6 +13,7 @@ export interface HomepageRecipe extends SanityDocument {
     tags: Array<HomepageRecipeTag>;
     featuredImageAlt: string;
     featuredImageUrl: string;
+    slug: string;
 }
 
 const getAllRecipesQuery = groq`
@@ -26,6 +27,7 @@ const getAllRecipesQuery = groq`
     },
     "featuredImageAlt":featuredImage.alt,
     "featuredImageUrl":featuredImage.asset->url,
+    "slug": slug.current,
 }`;
 
 export const getAllRecipes = async () => await client.fetch<HomepageRecipe[]>(getAllRecipesQuery);
