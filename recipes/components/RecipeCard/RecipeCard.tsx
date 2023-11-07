@@ -18,8 +18,8 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
         tags,
     } = recipe
     return (
-        <div className="border shadow-md m-2 lg:w-[250px] w-full rounded-3xl p-4 text-center">
-            <Image src={featuredImageUrl} alt={featuredImageAlt} width={220} height={150} className="rounded-2xl w-full h-[200px] object-cover object-center" />
+        <div className="border shadow-md m-2 lg:w-[250px] w-full rounded-xl p-4 text-center">
+            <Image src={featuredImageUrl} alt={featuredImageAlt} width={220} height={150} className="rounded-md w-full h-[200px] object-cover object-center" />
             <p className="text-slate-600 pt-2 font-semibold text-lg">{title}</p>
             <div>
                 {subtitle && (
