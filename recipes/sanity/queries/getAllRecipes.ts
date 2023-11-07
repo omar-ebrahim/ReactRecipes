@@ -10,7 +10,6 @@ export interface HomepageRecipe extends SanityDocument {
     subtitle?: string;
     cookTime: number;
     prepTime: number;
-    tags: Array<HomepageRecipeTag>;
     featuredImageAlt: string;
     featuredImageUrl: string;
     slug: string;
@@ -22,9 +21,6 @@ const getAllRecipesQuery = groq`
     subtitle,
     cookTime,
     prepTime,
-    tags[]->{
-      name
-    },
     "featuredImageAlt":featuredImage.alt,
     "featuredImageUrl":featuredImage.asset->url,
     "slug": slug.current,
