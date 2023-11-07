@@ -6,7 +6,7 @@ export default async function Home() {
   console.log(recipes);
 
   return (
-    <div className="lg:w-3/4 flex flex-wrap content-center gap-4 p-4 mx-auto h-full">
+    <div className="gap-4 p-4 mx-auto h-full md:grid lg:grid lg:grid-cols-4 md:grid-cols-2 w-fit">
       {recipes.map((recipe) => (
         <RecipeCard key={`$recipe_card_${recipe._id}`} recipe={recipe} />
       ))}
