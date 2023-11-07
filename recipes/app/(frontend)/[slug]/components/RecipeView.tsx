@@ -3,7 +3,6 @@
 import { RecipeViewRecipe, RecipeViewRecipeIngredient } from "@/sanity/queries/getReipceBySlug";
 import Image from "next/image";
 import { PortableText } from '@portabletext/react';
-import css from './recipeView.module.css'
 
 type RecipeViewProps = {
     data: RecipeViewRecipe;
