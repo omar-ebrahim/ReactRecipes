@@ -9,15 +9,23 @@ export const Recipe = defineType({
             title: 'Title',
             name: 'title',
             type: 'string',
-            description: 'Minimum 3 characters, maximum 80 characters.',
-            validation: Rule => Rule.required().error('Title is reqired').min(3).max(80)
+            description: 'Minimum 3 characters, maximum 25 characters.',
+            validation: Rule => Rule.required().error('Title is reqired').min(3).max(25)
+        }),
+        defineField({
+            title: "Slug",
+            name: "slug",
+            type: "slug",
+            options: {
+                source: 'title'
+            }
         }),
         defineField({
             title: 'Subtitle',
             name: 'subtitle',
             type: 'string',
-            description: 'Minimum 10 characters, maximum 80 characters.',
-            validation: Rule => Rule.min(10).max(80)
+            description: 'Minimum 10 characters, maximum 50 characters.',
+            validation: Rule => Rule.min(10).max(50)
         }),
         defineField({
             title: 'Featured Image',
@@ -59,8 +67,8 @@ export const Recipe = defineType({
                             unit: 'unit'
                         },
                         prepare(selection){
-                            const { ingredient, amount, unit, brand = '' } = selection;
-                            return { title: `${amount}${unit} ${brand ? `${brand} ` : ''}${ingredient}`}
+                            const { ingredient, amount, unit = '', brand = '' } = selection;
+                            return { title: `${amount || ''} ${unit || ''} ${brand || ''}${ingredient}`}
                         }
                     },
                     fields: [
@@ -75,7 +83,6 @@ export const Recipe = defineType({
                             title: 'Amount',
                             name: 'amount',
                             type: 'number',
-                            validation: Rule => Rule.required().error('Amount is required.')
                         }),
                         defineField({
                             title: 'Unit',
@@ -96,7 +103,8 @@ export const Recipe = defineType({
                                     { title: 'g', value: 'g' },
                                     { title: 'kg', value: 'kg' },
                                     { title: 'lb', value: 'lb' },
-                                    { title: 'oz', value: 'oz' }
+                                    { title: 'oz', value: 'oz' },
+                                    { title: 'slice(s)', value: 'slice(s)' },
                                 ],
                             },
                         })
