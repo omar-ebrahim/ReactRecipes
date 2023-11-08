@@ -46,7 +46,7 @@ const RecipeView = ({ data: recipe }: RecipeViewProps) => {
                         </div>
                         <ul className="list-disc pt-2">
                             {ingredients.map((ingredient) => {
-                                return <li className="ml-5 pb-1 pt-1">{formatIngredient(ingredient)}</li>
+                                return <li key={`ingredient_item_${ingredient._id}`} className="ml-5 pb-1 pt-1">{formatIngredient(ingredient)}</li>
                             })}
                         </ul>
                     </section>

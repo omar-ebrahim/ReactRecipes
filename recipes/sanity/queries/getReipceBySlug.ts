@@ -2,7 +2,7 @@ import { groq } from "next-sanity";
 import { PortableTextBlock, SanityDocument } from "sanity";
 import { client } from "../lib/client";
 
-export interface RecipeViewRecipeIngredient {
+export interface RecipeViewRecipeIngredient extends SanityDocument {
     amount?: number;
     unit?: string;
     ingredientName: string;
@@ -31,9 +31,10 @@ const getRecipeBySlugQuery = groq`
     prepTime,
     cookTime,
     ingredients[] {
-      amount,
-      unit,
-      "ingredientName":ingredient->name
+        _id,
+        amount,
+        unit,
+        "ingredientName":ingredient->name
     },
     preamble,
     instructions,
