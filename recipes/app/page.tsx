@@ -1,5 +1,4 @@
 import RecipeCard from "@/components/recipecard/RecipeCard";
-import SearchBarWrapper from "@/components/searchbar/SearchBarWrapper";
 import { getAllRecipes } from "@/sanity/queries/getAllRecipes";
 
 export default async function Home() {

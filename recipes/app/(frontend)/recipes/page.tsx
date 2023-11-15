@@ -1,8 +1,6 @@
 "use client";
 
 import RecipeCard from "@/components/recipecard/RecipeCard";
-import SearchBar from "@/components/searchbar/SearchBar";
-import SearchBarWrapper from "@/components/searchbar/SearchBarWrapper";
 import { getRecipesBySearchTerm } from "@/sanity/queries/getRecipesBySearchTerm";
 
 type Props = {

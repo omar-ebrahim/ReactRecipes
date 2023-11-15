@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../tailwind.css'
 import Navbar from '../../recipes/components/navbar/navbar'
-import SearchBarWrapper from '@/components/searchbar/SearchBarWrapper'
+import SearchBar from '@/components/searchbar/SearchBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <SearchBarWrapper />
+        <SearchBar />
         {children}
       </body>
     </html>
