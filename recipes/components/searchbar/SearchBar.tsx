@@ -11,7 +11,7 @@ const SearchBar = () => {
   }
 
   return (
-    <div className="w-full text-center">
+    <div className="w-full md:w-[400px] md:m-auto text-center">
       <form onSubmit={handleSubmit} className="grid grid-cols-[1fr_auto] gap-2 p-4">
         <input
           value={searchTerm}
