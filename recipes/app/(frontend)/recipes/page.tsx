@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
 import RecipeCard from "@/components/recipecard/RecipeCard";
 import SearchBar from "@/components/searchbar/SearchBar";
+import SearchBarWrapper from "@/components/searchbar/SearchBarWrapper";
 import { getRecipesBySearchTerm } from "@/sanity/queries/getRecipesBySearchTerm";
 
 type Props = {
@@ -23,15 +24,11 @@ const Currentweather = async (context: Props) => {
   if (!context.searchParams?.searchTerm) return;
   let recipes = await getServerSideProps(context.searchParams?.searchTerm);
   return (
-    <>
-      <SearchBar />
-
-      <div className="gap-4 p-4 mx-auto h-full md:grid lg:grid lg:grid-cols-4 md:grid-cols-2 w-fit">
-        {recipes.map((recipe) => (
-          <RecipeCard key={`$recipe_card_${recipe._id}`} recipe={recipe} />
-        ))}
-      </div>
-    </>
+    <div className="gap-4 p-4 mx-auto h-full md:grid lg:grid lg:grid-cols-4 md:grid-cols-2 w-fit">
+      {recipes.map((recipe) => (
+        <RecipeCard key={`$recipe_card_${recipe._id}`} recipe={recipe} />
+      ))}
+    </div>
   );
 };
 
