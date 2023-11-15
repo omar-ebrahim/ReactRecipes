@@ -2,17 +2,17 @@ import { SanityDocument, groq } from "next-sanity";
 import { client } from "../lib/client";
 
 export interface HomepageRecipeTag {
-    name: string;
+  name: string;
 }
 
 export interface HomepageRecipe extends SanityDocument {
-    title: string;
-    subtitle?: string;
-    cookTime: number;
-    prepTime: number;
-    featuredImageAlt: string;
-    featuredImageUrl: string;
-    slug: string;
+  title: string;
+  subtitle?: string;
+  cookTime: number;
+  prepTime: number;
+  featuredImageAlt: string;
+  featuredImageUrl: string;
+  slug: string;
 }
 
 const getAllRecipesQuery = groq`
@@ -28,6 +28,8 @@ const getAllRecipesQuery = groq`
 }
 `;
 
-export const getRecipesBySearchTerm = async (searchTerm: string) =>  {
-    return await client.fetch<HomepageRecipe[]>(getAllRecipesQuery, { searchTerm: `${searchTerm}*`});
-}
+export const getRecipesBySearchTerm = async (searchTerm: string) => {
+  return await client.fetch<HomepageRecipe[]>(getAllRecipesQuery, {
+    searchTerm: `*${searchTerm}*`,
+  });
+};
