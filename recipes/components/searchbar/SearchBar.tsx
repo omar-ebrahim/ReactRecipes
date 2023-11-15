@@ -11,21 +11,23 @@ const SearchBar = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        value={searchTerm}
-        placeholder="Search for a recipe"
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="border rounded-lg p-2"
-      />
-      <button
-        type="submit"
-        disabled={searchTerm.length === 0}
-        className="button border bg-slate-100 p-2 m-4 rounded-lg disabled:pointer-events-none disabled:text-gray-400"
-      >
-        Search
-      </button>
-    </form>
+    <div className="w-full text-center">
+      <form onSubmit={handleSubmit} className="grid grid-cols-[1fr_auto] gap-2 p-4">
+        <input
+          value={searchTerm}
+          placeholder="Search for a recipe"
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="border rounded-lg h-12 p-2"
+        />
+        <button
+          type="submit"
+          disabled={searchTerm.length === 0}
+          className="button border bg-slate-100 rounded-lg disabled:pointer-events-none disabled:text-gray-400 h-12 px-4"
+        >
+         🔎   
+        </button>
+      </form>
+    </div>
   );
 };
 

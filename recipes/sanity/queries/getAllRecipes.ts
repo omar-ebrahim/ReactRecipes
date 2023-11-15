@@ -17,6 +17,7 @@ export interface HomepageRecipe extends SanityDocument {
 
 const getAllRecipesQuery = groq`
 *[_type == "recipe" && slug.current != null] {
+    _id,
     title,
     subtitle,
     cookTime,
