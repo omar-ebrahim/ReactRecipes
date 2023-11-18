@@ -1,26 +1,29 @@
 import RecipeCard from "@/components/recipecard/RecipeCard";
 import SearchHeader from "@/components/searchheader/SearchHeader";
-import { getRecipesByAllTags } from "@/sanity/queries/getRecipesByTags";
-import Link from "next/link";
+import { HomepageRecipe } from "@/sanity/documenttypes/HomepageRecipe";
 
-export default async function Home() {
-  const recipes = await getRecipesByAllTags();
+type RecipesByTypeViewProps = {
+    recipeType: string,
+  recipes: Array<HomepageRecipe>;
+};
+
+const RecipesByTypeView = ({ recipes, recipeType }: RecipesByTypeViewProps) => {
   return (
     <div>
       <SearchHeader />
-      {recipes.map((recipeGroup) => (
         <section className="pb-6">
           <header className="pt-4 px-8 mx-auto font-light text-4xl text-center">
-            <Link href={`/recipesbytype/${recipeGroup.slug}`}>{recipeGroup.name}</Link>
+            {recipeType}
           </header>
           <div className="px-4 gap-4 h-full md:grid lg:grid lg:grid-cols-4 md:grid-cols-2 w-full">
-            {recipeGroup.recipes.map((recipe) => (
-              <RecipeCard key={`$recipe_card_${recipe._id}`} recipe={recipe} />
+            {recipes.map((r) => (
+              <RecipeCard key={`$recipe_card_${r._id}`} recipe={r} />
             ))}
           </div>
           <div className="mx-auto mt-8 w-[200px] border border-b-slate-50"></div>
         </section>
-      ))}
     </div>
   );
-}
+};
+
+export default RecipesByTypeView;
