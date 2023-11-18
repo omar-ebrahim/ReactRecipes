@@ -11,7 +11,7 @@ export default async function Home() {
       {recipes.map((recipeGroup) => (
         <section key={`section_group_${recipeGroup._id}`} className="pb-6 md:max-w-[1200px] mx-auto">
           <header className="pt-4 md:pt-8 px-8 mx-auto text-4xl text-center text-slate-700">
-            <Link className="font-light" href={`/recipesbytype/${recipeGroup.slug}`}>{recipeGroup.name}</Link>
+            <Link className="font-extrabold" href={`/recipesbytype/${recipeGroup.slug}`}>{recipeGroup.name}</Link>
           </header>
           <div className="px-4 gap-4 h-full md:grid lg:grid lg:grid-cols-4 md:grid-cols-2 w-full">
             {recipeGroup.recipes.map((recipe) => (
