@@ -1,33 +1,14 @@
-"use client";
-
-import RecipeCard from "@/components/recipecard/RecipeCard";
-import { getRecipesBySearchTerm } from "@/sanity/queries/getRecipesBySearchTerm";
+import RecipesView from "./RecipesView";
 
 type Props = {
-  params?: {
-    num?: string;
-  };
   searchParams?: {
     searchTerm: string;
   };
 };
 
-async function getServerSideProps(searchTerm: string) {
-  const recipes = await getRecipesBySearchTerm(searchTerm);
-  return recipes;
-}
-
-const Currentweather = async (context: Props) => {
-  console.log(context.searchParams?.searchTerm);
+const Recipe = async (context: Props) => {
   if (!context.searchParams?.searchTerm) return;
-  let recipes = await getServerSideProps(context.searchParams?.searchTerm);
-  return (
-    <div className="gap-4 p-4 mx-auto h-full md:grid lg:grid lg:grid-cols-4 md:grid-cols-2 w-fit">
-      {recipes.map((recipe) => (
-        <RecipeCard key={`$recipe_card_${recipe._id}`} recipe={recipe} />
-      ))}
-    </div>
-  );
+  return <RecipesView searchTerm={context.searchParams.searchTerm} />;
 };
 
-export default Currentweather;
+export default Recipe;
