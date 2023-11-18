@@ -11,5 +11,14 @@ export const Tag = defineType({
             type: 'string',
             validation: Rule => Rule.required().error('Tag name is reqired')
         }),
+        defineField({
+            title: "Slug",
+            name: "slug",
+            type: "slug",
+            options: {
+                source: 'name'
+            },
+            validation: Rule => Rule.required().error('Slug name is reqired')
+        }),
     ]
 });
