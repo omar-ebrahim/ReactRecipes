@@ -1,6 +1,6 @@
 import RecipeCard from "@/components/recipecard/RecipeCard";
 import { getAllRecipes } from "@/sanity/queries/getAllRecipes";
-import Pizza from "../images/pizza.jpg";
+import Food from "../images/food.jpg";
 import Image from "next/image";
 import SearchBar from "@/components/searchbar/SearchBar";
 
@@ -13,11 +13,11 @@ export default async function Home() {
           <SearchBar />
         </div>
         <Image
-          src={Pizza.src}
-          width={1920}
-          height={1080}
+          src={Food.src}
+          width={4350}
+          height={2900}
           alt="pizza"
-          className="w-full h-[180px] md:h-[350px] object-cover object-center opacity-75"
+          className="w-full h-[180px] md:h-[350px] object-cover object-center"
         />
       </div>
 
