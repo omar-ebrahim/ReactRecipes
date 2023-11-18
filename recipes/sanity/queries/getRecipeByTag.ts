@@ -8,7 +8,7 @@ export interface RecipeByTag extends SanityDocument {
 }
 
 const getRecipesByTagQuery = groq`
-*[_type == "tag" && slug.current != $slug][0]{
+*[_type == "tag" && slug.current == $slug][0]{
     _id,
     name,
     "recipes":*[_type == "recipe" && slug.current != null && references(^._id)] {
