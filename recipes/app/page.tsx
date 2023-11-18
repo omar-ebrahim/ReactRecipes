@@ -9,7 +9,7 @@ export default async function Home() {
     <div>
       <SearchHeader />
       {recipes.map((recipeGroup) => (
-        <section className="pb-6">
+        <section key={`section_group_${recipeGroup._id}`} className="pb-6">
           <header className="pt-4 px-8 mx-auto font-light text-4xl text-center">
             <Link href={`/recipesbytype/${recipeGroup.slug}`}>{recipeGroup.name}</Link>
           </header>
