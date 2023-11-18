@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center flex-wrap bg-slate-400 p-3 ">
+    <nav className="flex items-center flex-wrap bg-white p-3 ">
       <Link legacyBehavior href="/">
         <a className="inline-flex items-center p-2 mr-4 ">
           <RecipeIcon className="w-12 h-12 pr-4 fill-black" />
@@ -24,7 +24,7 @@ const Navbar = () => {
         </a>
       </Link>
       <button
-        className=" inline-flex p-3 hover:bg-green-600 rounded lg:hidden text-black ml-auto hover:text-white outline-none"
+        className="inline-flex p-3 hover:bg-slate-100 rounded lg:hidden text-black ml-auto outline-none"
         onClick={handleClick}
       >
         <Hamburger className="w-12 h-12" />

@@ -2,6 +2,6 @@
 
 import SearchBarComponent from "./SearchBarComponent"
 
-const SearchBar = () => <SearchBarComponent ></SearchBarComponent>;
+const SearchBar = () => <SearchBarComponent />;
 
 export default SearchBar;
