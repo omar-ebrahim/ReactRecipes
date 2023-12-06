@@ -1,22 +1,9 @@
-import { SanityDocument, groq } from "next-sanity";
+import { groq } from "next-sanity";
 import { client } from "../lib/client";
-
-export interface HomepageRecipeTag {
-    name: string;
-}
-
-export interface HomepageRecipe extends SanityDocument {
-    title: string;
-    subtitle?: string;
-    cookTime: number;
-    prepTime: number;
-    featuredImageAlt: string;
-    featuredImageUrl: string;
-    slug: string;
-}
+import { HomepageRecipe } from "../documenttypes/HomepageRecipe";
 
 const getAllRecipesQuery = groq`
-*[_type == "recipe" && slug.current != null] {
+*[_type == "recipe" && slug.current != null][0...4] {
     _id,
     title,
     subtitle,
@@ -27,4 +14,5 @@ const getAllRecipesQuery = groq`
     "slug": slug.current,
 }`;
 
-export const getAllRecipes = async () => await client.fetch<HomepageRecipe[]>(getAllRecipesQuery);
+export const getAllRecipes = async () =>
+  await client.fetch<HomepageRecipe[]>(getAllRecipesQuery);

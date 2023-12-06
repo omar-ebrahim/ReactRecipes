@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../tailwind.css'
-import Navbar from '../../recipes/components/navbar/navbar'
+import Navbar from '../components/navbar/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 

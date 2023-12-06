@@ -53,6 +53,13 @@ export const Recipe = defineType({
             validation: Rule => Rule.required().error('Cook time is required.')
         }),
         defineField({
+            title: 'Servings',
+            name: 'servings',
+            type: 'number',
+            initialValue: 1,
+            validation: Rule => Rule.required()
+        }),
+        defineField({
             title: 'Ingredients',
             name: 'ingredients',
             type: 'array',
