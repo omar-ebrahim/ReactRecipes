@@ -18,5 +18,5 @@ const getAllRecipesQuery = groq`
 export const getRecipesBySearchTerm = async (searchTerm: string) => {
   return await client.fetch<HomepageRecipe[]>(getAllRecipesQuery, {
     searchTerm: `*${searchTerm}*`,
-  });
+  }, { cache: 'no-store' });
 };

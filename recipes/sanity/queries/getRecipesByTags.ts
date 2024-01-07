@@ -27,4 +27,4 @@ const getRecipesByAllTagsQuery = groq`
 `;
 
 export const getRecipesByAllTags = async () =>
-  await client.fetch<RecipeByTag[]>(getRecipesByAllTagsQuery);
+  await client.fetch<RecipeByTag[]>(getRecipesByAllTagsQuery, {}, { cache: 'no-store' });

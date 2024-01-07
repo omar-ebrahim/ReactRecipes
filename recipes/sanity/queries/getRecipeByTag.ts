@@ -25,4 +25,4 @@ const getRecipesByTagQuery = groq`
 `;
 
 export const getRecipesBySpecifiedTag = async (slug: string) =>
-  await client.fetch<RecipeByTag>(getRecipesByTagQuery, { slug });
+  await client.fetch<RecipeByTag>(getRecipesByTagQuery, { slug }, { cache: 'no-store' });
