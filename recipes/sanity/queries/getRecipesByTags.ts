@@ -9,7 +9,7 @@ export interface RecipeByTag extends SanityDocument {
 }
 
 const getRecipesByAllTagsQuery = groq`
-*[_type == "tag" && slug.current != null] {
+*[_type == "tag" && slug.current != null && count(*[_type == "recipe" && slug.current != null && references(^._id)]) > 0] {
     _id,
     name,
     "slug": slug.current,
