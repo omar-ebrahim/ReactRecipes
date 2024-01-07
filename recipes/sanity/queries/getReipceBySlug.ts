@@ -46,5 +46,5 @@ export function getRecipeBySlug(slug: string) {
         throw new Error('getRecipeBySlug: slug is required.');
     }
 
-    return client.fetch<RecipeViewRecipe>(getRecipeBySlugQuery, { slug });
+    return client.fetch<RecipeViewRecipe>(getRecipeBySlugQuery, { slug }, { cache: 'no-store' });
 }
