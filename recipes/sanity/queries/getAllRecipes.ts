@@ -15,4 +15,4 @@ const getAllRecipesQuery = groq`
 }`;
 
 export const getAllRecipes = async () =>
-  await client.fetch<HomepageRecipe[]>(getAllRecipesQuery, { cache: 'no-store' });
+  await client.fetch<HomepageRecipe[]>(getAllRecipesQuery, {}, { cache: 'no-store' });
