@@ -3,8 +3,8 @@ import { client } from "../lib/client";
 import { HomepageRecipe } from "../documenttypes/HomepageRecipe";
 
 export interface RecipeByTag extends SanityDocument {
-    name: string,
-    recipes: Array<HomepageRecipe>
+  name: string,
+  recipes: Array<HomepageRecipe>
 }
 
 const getRecipesByTagQuery = groq`
@@ -26,3 +26,11 @@ const getRecipesByTagQuery = groq`
 
 export const getRecipesBySpecifiedTag = async (slug: string) =>
   await client.fetch<RecipeByTag>(getRecipesByTagQuery, { slug }, { cache: 'no-store' });
+
+const tagsSlugsQuery = groq`
+*[_type == "tag" && defined(slug.current)].slug.current
+`;
+
+export async function getTagSlugs() {
+  return await client.fetch<string[]>(tagsSlugsQuery, {}, { perspective: 'published' });
+}
