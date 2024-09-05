@@ -48,3 +48,11 @@ export function getRecipeBySlug(slug: string) {
 
     return client.fetch<RecipeViewRecipe>(getRecipeBySlugQuery, { slug }, { cache: 'no-store' });
 }
+
+const recipesSlugsQuery = groq`
+*[_type == "recipe" && defined(slug.current)].slug.current
+`;
+
+export function getRecipeSlugs() {
+    return client.fetch<string[]>(recipesSlugsQuery, {}, { cache: 'no-store' })
+};
