@@ -1,6 +1,6 @@
 "use client";
 
-import { RecipeViewRecipe, RecipeViewRecipeIngredient } from "@/sanity/queries/getReipceBySlug";
+import { RecipeViewRecipe, RecipeViewRecipeIngredient } from "@/sanity/queries/getRecipeBySlug";
 import Image from "next/image";
 import { PortableText } from '@portabletext/react';
 

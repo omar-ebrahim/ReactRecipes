@@ -54,5 +54,5 @@ const recipesSlugsQuery = groq`
 `;
 
 export function getRecipeSlugs() {
-    return client.fetch<string[]>(recipesSlugsQuery, {}, { cache: 'no-store' })
+    return client.fetch<string[]>(recipesSlugsQuery, {}, { perspective: 'published' })
 };

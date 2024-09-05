@@ -1,5 +1,10 @@
-import { getRecipesBySpecifiedTag } from "@/sanity/queries/getRecipeByTag";
+import { getRecipesBySpecifiedTag, getTagSlugs } from "@/sanity/queries/getRecipeByTag";
 import RecipesByTypeView from "./RecipesByTypeView";
+
+export async function generateStaticParams() {
+  const slugs = await getTagSlugs();
+  return slugs.map((slug) => ({ slug }))
+}
 
 const RecipesByType = async (props: { params: { slug: string } }) => {
   const { slug } = props.params;
