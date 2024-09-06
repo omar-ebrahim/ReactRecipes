@@ -29,6 +29,23 @@
 .inputWrapper {
     padding: 0.25rem;
     border-radius: 0.75rem;
+
+    & button {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background-color: rgb(255 255 255);
+        border-color: rgb(107 114 128);
+        border-width: 1px;
+        border-radius: 0.5rem;
+        height: 3rem;
+
+        &:disabled {
+            color: rgb(31 41 55);
+            background-color: rgb(229 231 235);
+            pointer-events: none;
+            cursor: default;
+        }
+    }
 }
 
 .searchInput {

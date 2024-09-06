@@ -31,7 +31,6 @@ const SearchBarComponent = () => {
             aria-label={searchTerm.length === 0 ? "Enter some text to enable search" : "Search for a recipe"}
             type="submit"
             disabled={searchTerm.length === 0}
-            className="button border border-gray-500 bg-white hover:bg-slate-50 rounded-lg disabled:pointer-events-none disabled:bg-gray-200 disabled:text-gray-800 h-12 px-4"
           >
             🔎
           </button>
