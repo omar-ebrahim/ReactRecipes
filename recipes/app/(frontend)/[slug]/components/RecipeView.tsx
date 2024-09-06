@@ -10,14 +10,6 @@ type RecipeViewProps = {
     data: RecipeViewRecipe;
 }
 
-const formatIngredient = (ingredient: RecipeViewRecipeIngredient) => {
-    if (!ingredient) return '';
-    const { ingredientName, amount, unit } = ingredient;
-    if (!amount) return ingredientName
-    if (!unit) return `${amount} x ${ingredientName}`;
-    return `${amount} ${unit} ${ingredientName}`
-}
-
 const RecipeView = ({ data: recipe }: RecipeViewProps) => {
     const {
         cookTime,
