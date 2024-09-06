@@ -1,40 +1,26 @@
-.sectionGroup {
+.container {
     padding-bottom: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-
-    @media (min-width: 768px) {
-        max-width: 1200px;
-    }
 }
 
-.sectionHeader {
-    padding-top: 1rem;
-    color: rgb(51 65 85);
-    font-size: 2.25rem;
+.header {
+    font-weight: 300;
+    font-size: 2.5rem;
     line-height: 2.5rem;
     text-align: center;
+    padding-top: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
     margin-left: auto;
     margin-right: auto;
-
-    @media (min-width: 768px) {
-        padding-top: 2rem;
-    }
-
-    & .title {
-        font-weight: 800;
-    }
 }
 
-.cardGroupContainer {
+.recipeCardsContainer {
     padding-left: 1rem;
     padding-right: 1rem;
     gap: 1rem;
     width: 100%;
     height: 100%;
-
+    
     @media (min-width: 768px) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         display: grid;

@@ -3,6 +3,7 @@ import Link from "next/link";
 import RecipeCard from "../recipecard/RecipeCard";
 
 import styles from './RecipesSection.module.css'
+import SectionDivider from "../sectiondivider/SectionDivider";
 
 type RecipesSectionProps = {
     recipes: RecipeByTag[];
@@ -20,7 +21,7 @@ const RecipesSection = ({ recipes }: RecipesSectionProps) => {
                         <RecipeCard key={`$recipe_card_${recipe._id}`} recipe={recipe} />
                     ))}
                 </div>
-                <div className={styles.sectionDivider}></div>
+                <SectionDivider />
             </section>
         ))
     )

@@ -2,6 +2,9 @@ import RecipeCard from "@/components/recipecard/RecipeCard";
 import SearchHeader from "@/components/searchheader/SearchHeader";
 import { HomepageRecipe } from "@/sanity/documenttypes/HomepageRecipe";
 
+import styles from './RecipesByType.module.css'
+import SectionDivider from "@/components/sectiondivider/SectionDivider";
+
 type RecipesByTypeViewProps = {
     recipeType: string,
   recipes: Array<HomepageRecipe>;
@@ -11,16 +14,16 @@ const RecipesByTypeView = ({ recipes, recipeType }: RecipesByTypeViewProps) => {
   return (
     <div>
       <SearchHeader />
-        <section className="pb-6">
-          <header className="pt-4 px-8 mx-auto font-light text-4xl text-center">
+        <section className={styles.conainer}>
+          <header className={styles.header}>
             {recipeType}
           </header>
-          <div className="px-4 gap-4 h-full md:grid lg:grid lg:grid-cols-4 md:grid-cols-2 w-full">
+          <div className={styles.recipeCardsContainer}>
             {recipes.map((r) => (
               <RecipeCard key={`$recipe_card_${r._id}`} recipe={r} />
             ))}
           </div>
-          <div className="mx-auto mt-8 w-[200px] border border-b-slate-50"></div>
+          <SectionDivider />
         </section>
     </div>
   );
