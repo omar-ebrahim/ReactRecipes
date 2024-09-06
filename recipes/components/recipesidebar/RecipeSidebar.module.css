@@ -1,0 +1,46 @@
+.sidebarSection {
+    padding-bottom: 2rem;
+
+    @media (min-width: 1024px) {
+        padding-top: 9rem;
+    }
+
+
+}
+
+.ingredients {
+    padding-top: 2rem;
+
+    & h1 {
+        font-weight: 600;
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+
+        @media (min-width: 1024px) {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+    }
+
+    & .jumpLink {
+        text-decoration-line: underline;
+        color: rgb(71 85 105);
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+
+        @media (min-width: 1024px) {
+            display: none;
+        }
+    }
+
+    & .ingredientsList {
+        padding-top: 0.5rem;
+        list-style-type: disc;
+
+        & .ingredientItem {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            margin-left: 1.25rem;
+        }
+    }
+}
