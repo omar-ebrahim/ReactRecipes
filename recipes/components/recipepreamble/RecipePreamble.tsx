@@ -12,7 +12,7 @@ const RecipePreamble: React.FC<RecipePreambleProps> = ({ preamble }: RecipePream
         <>
             <header className={styles.header}>Introduction</header>
             <div className={styles.jumpLink}>
-                <a href='#recipe'>Jump to instructions</a>
+                <a href='#recipe'>Jump to recipe</a>
             </div>
             <PortableText value={preamble} />
         </>

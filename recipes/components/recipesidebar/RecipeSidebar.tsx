@@ -26,7 +26,7 @@ const RecipeSidebar = ({ prepTime, cookTime, ingredients }: RecipeSidebarProps) 
                 <section id="ingredients" className={styles.ingredients}>
                     <h1>Ingredients</h1>
                     <div className={styles.jumpLink}>
-                        <a href='#recipe'>Jump to instructions</a>
+                        <a href='#recipe'>Jump to recipe</a>
                     </div>
                     <ul className={styles.ingredientsList}>
                         {ingredients.map((ingredient) => {
