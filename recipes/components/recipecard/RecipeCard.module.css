@@ -2,7 +2,6 @@
     text-align: center;
     padding: 1rem;
     border-width: 1px;
-    border-radius: 0.75rem;
     height: 100%;
     margin-top: 1rem;
 
@@ -22,7 +21,6 @@
 .cardImage {
     object-position: center;
     object-fit: cover;
-    border-radius: 0.4rem;
     width: 100%;
     height: 200px;
     display: block;
