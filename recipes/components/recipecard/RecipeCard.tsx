@@ -33,11 +33,6 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
         />
         <p className={styles.cardTitle}>{title}</p>
         <div>
-          {subtitle && (
-            <small className={styles.cardSubtitle}>{subtitle}</small>
-          )}
-        </div>
-        <div>
           <p className={styles.cardTime}>
             <Clock />
             <span>{convertMinutesToHoursAndMinutes(prepTime + cookTime)}</span>

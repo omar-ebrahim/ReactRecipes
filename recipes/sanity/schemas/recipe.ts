@@ -24,8 +24,8 @@ export const Recipe = defineType({
             title: 'Subtitle',
             name: 'subtitle',
             type: 'string',
-            description: 'Minimum 10 characters, maximum 50 characters.',
-            validation: Rule => Rule.min(10).max(50)
+            description: 'Minimum 10 characters.',
+            validation: Rule => Rule.min(10)
         }),
         defineField({
             title: 'Featured Image',
