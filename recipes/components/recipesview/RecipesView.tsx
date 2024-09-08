@@ -1,26 +1,25 @@
 import RecipeCard from "@/components/recipecard/RecipeCard";
-import { getRecipesBySearchTerm } from "@/sanity/queries/getRecipesBySearchTerm";
 import SearchHeader from "@/components/searchheader/SearchHeader";
 
 import styles from './RecipesView.module.css'
+import { HomepageRecipe } from "@/sanity/documenttypes/HomepageRecipe";
 
 type RecipeViewProps = {
-  searchTerm: string;
+  recipes?: HomepageRecipe[]
 };
 
-const RecipesView = async ({ searchTerm }: RecipeViewProps) => {
-  const recipes = await getRecipesBySearchTerm(searchTerm);
+const RecipesView = async ({ recipes }: RecipeViewProps) => {
   return (
     <div>
       <SearchHeader />
-      {recipes.length > 0 && (
+      {recipes && recipes.length > 0 && (
         <div className={styles.wrapper}>
           {recipes.map((recipe) => (
             <RecipeCard key={`$recipe_card_${recipe._id}`} recipe={recipe} />
           ))}
         </div>
       )}
-      {recipes.length === 0 && <p>No results :(</p>}
+      {!recipes || recipes.length === 0 && <p>No results :(</p>}
     </div>
   );
 };
