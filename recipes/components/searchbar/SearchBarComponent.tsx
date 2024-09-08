@@ -2,6 +2,8 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import styles from './SearchBarComponent.module.css';
 
+const getButtonTitle = (length: number) => length === 0 ? "Enter some text to enable search" : "Search for a recipe name";
+
 const SearchBarComponent = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
@@ -27,8 +29,8 @@ const SearchBarComponent = () => {
         </div>
         <div className={styles.inputWrapper}>
           <button
-            title={searchTerm.length === 0 ? "Enter some text to enable search" : "Search for a recipe"}
-            aria-label={searchTerm.length === 0 ? "Enter some text to enable search" : "Search for a recipe"}
+            title={getButtonTitle(searchTerm.length)}
+            aria-label={getButtonTitle(searchTerm.length)}
             type="submit"
             disabled={searchTerm.length === 0}
           >
