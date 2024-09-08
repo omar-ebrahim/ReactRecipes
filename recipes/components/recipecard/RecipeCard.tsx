@@ -14,7 +14,6 @@ type RecipeCardProps = {
 const RecipeCard = ({ recipe }: RecipeCardProps) => {
   const {
     title,
-    subtitle,
     cookTime,
     featuredImageAlt,
     featuredImageUrl,
