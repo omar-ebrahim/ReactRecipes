@@ -1,4 +1,5 @@
-import RecipesView from "./components/RecipesView";
+import { getRecipesBySearchTerm } from "@/sanity/queries/getRecipesBySearchTerm";
+import RecipesView from "../../../components/recipesview/RecipesView";
 
 type Props = {
   searchParams?: {
@@ -6,9 +7,13 @@ type Props = {
   };
 };
 
+// NOTE: Elastic would be better suited for site-wide search
+// as the performance is a lot better than querying Sanity.
+
 const Recipe = async (context: Props) => {
   if (!context.searchParams?.searchTerm) return;
-  return <RecipesView searchTerm={context.searchParams.searchTerm} />;
+  const recipes = await getRecipesBySearchTerm(context.searchParams?.searchTerm);
+  return <RecipesView recipes={recipes} />;
 };
 
 export default Recipe;
