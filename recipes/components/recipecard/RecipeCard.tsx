@@ -4,6 +4,8 @@ import Clock from "./clock.svg";
 import Link from "next/link";
 import { HomepageRecipe } from "@/sanity/documenttypes/HomepageRecipe";
 
+import styles from './RecipeCard.module.css';
+
 type RecipeCardProps = {
   recipe: HomepageRecipe;
 };
@@ -20,23 +22,23 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
   } = recipe;
   return (
     <Link href={`/${slug}`} aria-label={title}>
-      <div className="hover:bg-gray-100 border shadow-md md:w-[250px] lg:w-[250px] sm:w-full h-full rounded-xl p-4 text-center mt-4">
+      <div className={styles.recipeCard}>
         <Image
           src={featuredImageUrl}
           alt={featuredImageAlt}
           width={220}
           height={150}
-          className="rounded-md w-full h-[200px] object-cover object-center"
+          className={styles.cardImage}
         />
-        <p className="text-slate-600 pt-2 font-semibold text-lg">{title}</p>
+        <p className={styles.cardTitle}>{title}</p>
         <div>
           {subtitle && (
-            <small className="inline-block p-2 text-[1em]">{subtitle}</small>
+            <small className={styles.cardSubtitle}>{subtitle}</small>
           )}
         </div>
         <div>
-          <p className="inline-flex gap-4 text-center align-middle">
-            <Clock className="w-6 h-6" />
+          <p className={styles.cardTime}>
+            <Clock />
             <span>{prepTime + cookTime} mins</span>
           </p>
         </div>

@@ -1,4 +1,4 @@
-import RecipesView from "./RecipesView";
+import RecipesView from "./components/RecipesView";
 
 type Props = {
   searchParams?: {

@@ -1,11 +1,12 @@
 import SearchBar from "../searchbar/SearchBar";
 import Food from "../../images/food.jpg";
 import Image from "next/image";
+import styles from './SearchHeader.module.css'
 
 const SearchHeader = () => {
   return (
-    <div className="relative">
-      <div className="absolute z-30 w-full h-full">
+    <div className={styles.headerContainer}>
+      <div className={styles.searchBarContainer}>
         <SearchBar />
       </div>
       <Image
@@ -13,7 +14,7 @@ const SearchHeader = () => {
         width={4350}
         height={2900}
         alt="pizza"
-        className="w-full h-[180px] md:h-[300px] object-cover object-center"
+        className={styles.searchHeaderImage}
       />
     </div>
   );

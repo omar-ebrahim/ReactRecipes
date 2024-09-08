@@ -1,0 +1,58 @@
+.recipeCard {
+    text-align: center;
+    padding: 1rem;
+    border-width: 1px;
+    border-radius: 0.75rem;
+    height: 100%;
+    margin-top: 1rem;
+
+    @media (min-width: 1024px) {
+        width: 250px;
+    }
+
+    @media (min-width: 768px) {
+        width: 250px;
+    }
+
+    @media (min-width: 640px) {
+        width: 100%;
+    }
+}
+
+.cardImage {
+    object-position: center;
+    object-fit: cover;
+    border-radius: 0.4rem;
+    width: 100%;
+    height: 200px;
+    display: block;
+    max-width: 100%;
+}
+
+.cardTitle {
+    color: rgb(71 85 105);
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    padding-top: 0.5rem;
+    margin: 0;
+}
+
+.cardSubtitle {
+    display: inline-block;
+    font-size: 1em;
+    padding: 0.5rem;
+}
+
+.cardTime {
+    vertical-align: middle;
+    text-align: center;
+    gap: 1rem;
+    display: inline-flex;
+    margin: 0;
+
+    & svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}

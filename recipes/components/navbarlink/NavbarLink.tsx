@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from './NavbarLink.module.css';
 
 type NavbarLinkProps = {
     url?: string;
@@ -7,7 +8,7 @@ type NavbarLinkProps = {
 
 const NavbarLink = ({ url = '/', label } : NavbarLinkProps) => {
     return (
-        <Link href={url} title={label} className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-slate-100">
+        <Link href={url} title={label} className={styles.navLink}>
             {label}
         </Link>
     );

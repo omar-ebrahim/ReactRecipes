@@ -6,6 +6,8 @@ import RecipeIcon from "./recipeicon.svg";
 import Hamburger from "./hamburger.svg";
 import NavbarLink from "../navbarlink/NavbarLink";
 
+import styles from './Navbar.module.css';
+
 const Navbar = () => {
   const [active, setActive] = useState(false);
 
@@ -14,27 +16,22 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center flex-wrap bg-white p-3 ">
+    <nav className={styles.navbar}>
       <Link legacyBehavior href="/">
-        <a className="inline-flex items-center p-2 mr-4 ">
-          <RecipeIcon className="w-12 h-12 pr-4 fill-black" />
-          <span className="text-xl text-black font-bold uppercase tracking-wide">
-            Recipes
-          </span>
+        <a className={styles.navbarHomeLink}>
+          <RecipeIcon />
+          <span>Recipes</span>
         </a>
       </Link>
       <button
-        className="inline-flex p-3 hover:bg-slate-100 rounded lg:hidden text-black ml-auto outline-none"
+        className={styles.hamburgerMenuButton}
         onClick={handleClick}
       >
-        <Hamburger className="w-12 h-12" />
+        <Hamburger />
       </button>
       <div
-        className={`${
-          active ? "" : "hidden"
-        } w-full lg:inline-flex lg:flex-grow lg:w-auto`}
-      >
-        <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+        className={`${active ? "" : styles.hidden} ${styles.hamburgerMenu}`} >
+        <div className={styles.navLinksContainer}>
           <NavbarLink label="Home" />
           <NavbarLink label="About Us" />
           <NavbarLink label="Contact" />
