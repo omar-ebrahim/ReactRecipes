@@ -13,7 +13,6 @@ type RecipesByTypeViewProps = {
 const RecipesByTypeView = ({ recipes, recipeType }: RecipesByTypeViewProps) => {
   return (
     <div>
-      <SearchHeader />
         <section className={styles.conainer}>
           <header className={styles.header}>
             {recipeType}

@@ -11,7 +11,6 @@ type RecipeViewProps = {
 const RecipesView = async ({ recipes }: RecipeViewProps) => {
   return (
     <div>
-      <SearchHeader />
       {recipes && recipes.length > 0 && (
         <div className={styles.wrapper}>
           {recipes.map((recipe) => (
