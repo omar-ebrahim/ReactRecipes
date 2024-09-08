@@ -1,5 +1,4 @@
 import RecipeCard from "@/components/recipecard/RecipeCard";
-import SearchHeader from "@/components/searchheader/SearchHeader";
 import { HomepageRecipe } from "@/sanity/documenttypes/HomepageRecipe";
 
 import styles from './RecipesByType.module.css'
