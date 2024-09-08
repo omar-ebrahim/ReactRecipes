@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import styles from './SearchBarComponent.module.css';
-import { GoSearch } from "react-icons/go";
+import { CiSearch } from "react-icons/ci";
 
 const getButtonTitle = (length: number) => length === 0 ? "Enter some text to enable search" : "Search for a recipe name";
 
@@ -35,7 +35,7 @@ const SearchBarComponent = () => {
             type="submit"
             disabled={searchTerm.length === 0}
           >
-            <GoSearch />
+            <CiSearch />
           </button>
         </div>
       </form>
