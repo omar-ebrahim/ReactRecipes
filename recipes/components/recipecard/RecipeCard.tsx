@@ -14,7 +14,6 @@ type RecipeCardProps = {
 const RecipeCard = ({ recipe }: RecipeCardProps) => {
   const {
     title,
-    subtitle,
     cookTime,
     featuredImageAlt,
     featuredImageUrl,
@@ -32,11 +31,6 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
           className={styles.cardImage}
         />
         <p className={styles.cardTitle}>{title}</p>
-        <div>
-          {subtitle && (
-            <small className={styles.cardSubtitle}>{subtitle}</small>
-          )}
-        </div>
         <div>
           <p className={styles.cardTime}>
             <Clock />
