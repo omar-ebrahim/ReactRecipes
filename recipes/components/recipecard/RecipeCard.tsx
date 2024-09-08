@@ -5,6 +5,7 @@ import Link from "next/link";
 import { HomepageRecipe } from "@/sanity/documenttypes/HomepageRecipe";
 
 import styles from './RecipeCard.module.css';
+import { convertMinutesToHoursAndMinutes } from "@/utils/time";
 
 type RecipeCardProps = {
   recipe: HomepageRecipe;
@@ -39,7 +40,7 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
         <div>
           <p className={styles.cardTime}>
             <Clock />
-            <span>{prepTime + cookTime} mins</span>
+            <span>{convertMinutesToHoursAndMinutes(prepTime + cookTime)}</span>
           </p>
         </div>
       </div>

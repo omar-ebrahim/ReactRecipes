@@ -1,6 +1,7 @@
 import { RecipeViewRecipeIngredient } from "@/sanity/queries/getRecipeBySlug";
 
 import styles from './RecipeSidebar.module.css';
+import { convertMinutesToHoursAndMinutes } from "@/utils/time";
 
 type RecipeSidebarProps = {
     prepTime: number;
@@ -19,8 +20,8 @@ const formatIngredient = (ingredient: RecipeViewRecipeIngredient) => {
 const RecipeSidebar = ({ prepTime, cookTime, ingredients }: RecipeSidebarProps) => {
     return (
         <section className={styles.sidebarSection}>
-            <p>Prep time: {prepTime} mins.</p>
-            <p>Cook time: {cookTime} mins.</p>
+            <p>Prep time: {convertMinutesToHoursAndMinutes(prepTime)}</p>
+            <p>Cook time: {convertMinutesToHoursAndMinutes(cookTime)}</p>
             {ingredients && (
                 <section id="ingredients" className={styles.ingredients}>
                     <h1>Ingredients</h1>
