@@ -1,5 +1,4 @@
 import RecipeCard from "@/components/recipecard/RecipeCard";
-import SearchHeader from "@/components/searchheader/SearchHeader";
 import { HomepageRecipe } from "@/sanity/documenttypes/HomepageRecipe";
 
 import styles from './RecipesByType.module.css'
@@ -13,7 +12,6 @@ type RecipesByTypeViewProps = {
 const RecipesByTypeView = ({ recipes, recipeType }: RecipesByTypeViewProps) => {
   return (
     <div>
-      <SearchHeader />
         <section className={styles.conainer}>
           <header className={styles.header}>
             {recipeType}
