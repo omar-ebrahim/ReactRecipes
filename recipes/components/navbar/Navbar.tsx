@@ -32,9 +32,8 @@ const Navbar = () => {
       <div
         className={`${active ? "" : styles.hidden} ${styles.hamburgerMenu}`} >
         <div className={styles.navLinksContainer}>
-          <NavbarLink label="Home" />
-          <NavbarLink label="About Us" />
-          <NavbarLink label="Contact" />
+          <NavbarLink label="Home" url="/" />
+          <NavbarLink label="About Us" url="/aboutus" />
         </div>
       </div>
     </nav>
