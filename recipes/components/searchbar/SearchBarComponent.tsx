@@ -1,6 +1,7 @@
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import styles from './SearchBarComponent.module.css';
+import { GoSearch } from "react-icons/go";
 
 const getButtonTitle = (length: number) => length === 0 ? "Enter some text to enable search" : "Search for a recipe name";
 
@@ -22,7 +23,7 @@ const SearchBarComponent = () => {
         <div className={styles.inputWrapper}>
           <input
             value={searchTerm}
-            placeholder="Search for a recipe"
+            placeholder="Search for a recipe name"
             onChange={(e) => setSearchTerm(e.target.value)}
             className={styles.searchInput}
           />
@@ -34,7 +35,7 @@ const SearchBarComponent = () => {
             type="submit"
             disabled={searchTerm.length === 0}
           >
-            🔎
+            <GoSearch />
           </button>
         </div>
       </form>

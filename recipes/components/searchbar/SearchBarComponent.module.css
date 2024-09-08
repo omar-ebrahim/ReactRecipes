@@ -40,7 +40,7 @@
         height: 3rem;
 
         &:disabled {
-            color: rgb(31 41 55);
+            color: gray;
             background-color: rgb(229 231 235);
             pointer-events: none;
             cursor: default;
