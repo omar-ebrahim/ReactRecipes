@@ -13,7 +13,7 @@ const RecipeHeader = ({ title, subtitle, featuredImageAlt = '', featuredImageUrl
         <section className={styles.sectionContainer}>
             <header>{title}</header>
             {subtitle && <h2>{subtitle}</h2>}
-            {featuredImageUrl && <Image priority src={featuredImageUrl} alt={featuredImageAlt} width={100} height={100} className={styles.featuredImage} />}
+            {featuredImageUrl && <Image priority src={featuredImageUrl} alt={featuredImageAlt} width={500} height={500} className={styles.featuredImage} />}
         </section>
     )
 };
