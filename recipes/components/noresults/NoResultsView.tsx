@@ -4,7 +4,7 @@ const NoResultsView = () => {
     return (
         <div className={styles.noResults}>
             <h2>No Results Found</h2>
-            <p>Sorry, we couldn't find any results matching your search.</p>
+            <p>Sorry, we couldn&apos;t find any results matching your search.</p>
         </div>
     );
 };
