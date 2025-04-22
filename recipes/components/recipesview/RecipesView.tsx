@@ -2,6 +2,7 @@ import RecipeCard from "@/components/recipecard/RecipeCard";
 
 import styles from './RecipesView.module.css'
 import { HomepageRecipe } from "@/sanity/documenttypes/HomepageRecipe";
+import NoResultsView from "../noresults/NoResultsView";
 
 type RecipeViewProps = {
   recipes?: HomepageRecipe[]
@@ -17,7 +18,7 @@ const RecipesView = async ({ recipes }: RecipeViewProps) => {
           ))}
         </div>
       )}
-      {!recipes || recipes.length === 0 && <p>No results :(</p>}
+      {!recipes || recipes.length === 0 && <NoResultsView />}
     </div>
   );
 };

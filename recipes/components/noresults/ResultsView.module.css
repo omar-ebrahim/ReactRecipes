@@ -1,0 +1,16 @@
+.noResults {
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 2rem;
+
+    & h2 {
+        font-weight: bold;
+        font-size: large;
+    }
+
+    & p {
+        padding-top: 2rem;
+    }
+}
